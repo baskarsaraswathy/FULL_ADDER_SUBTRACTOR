@@ -37,6 +37,7 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+![image](https://github.com/baskarsaraswathy/FULL_ADDER_SUBTRACTOR/assets/144871005/2f518e8b-41f2-4b23-aefb-8a15a0ffaa6e)
 
 **Procedure**
 
@@ -44,12 +45,30 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+```
+module san04(a,b,c,sum,carry,BO,DIFF);
+input a,b,c;
+output sum,carry,BO,DIFF;
+//FULL ADDER
+assign sum = a^b^c;
+assign carry = (a&b) | (b&c) | (a&c);
+wire a0;
+not (a0,a);
+//FUKK SUBTRACTOR
+assign DIFF = a^b^c;
+assign BO = (a0&b) | (b&c) | (a0&c);
+endmodule
+
+```
+Developed by:BASKAR J RegisterNumber:212223040025
 */
 
 **RTL Schematic**
+![image](https://github.com/baskarsaraswathy/FULL_ADDER_SUBTRACTOR/assets/144871005/97a5bec1-2a70-4786-b952-7a38efb9d1f2)
 
 **Output Timing Waveform**
+![image](https://github.com/baskarsaraswathy/FULL_ADDER_SUBTRACTOR/assets/144871005/04a9108b-11e0-4da8-8e68-4b0fc915f921)
 
 **Result:**
 
